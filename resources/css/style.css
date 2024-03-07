@@ -1,6 +1,18 @@
+:root{
+    --myBlack: #2B3035;
+    --myWhite: #dde0e2;
+}
+
+h1, h2, h3{
+    text-align: center;
+}
+
 body{
     margin: 0;
+    background-color: var(--myBlack)!important;
+    color: var(--myWhite)!important;
 }
+
 
 .test{
     border-bottom: solid 3px black;
