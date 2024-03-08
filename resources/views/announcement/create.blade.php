@@ -10,5 +10,5 @@
                 <livewire:create-announcement />
             </div>
         </div>
-    </div>    
+    </div>
 </x-layout>
