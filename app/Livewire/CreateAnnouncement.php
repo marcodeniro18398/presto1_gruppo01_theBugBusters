@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Category;
 use App\Models\Announcement;
 use Livewire\Attributes\Validate;
 
@@ -18,6 +19,9 @@ class CreateAnnouncement extends Component
     
     #[Validate('required', message: 'Il campo è obbligatorio')] 
     public $price = '';
+
+    #[Validate('required', message: 'Il campo è obbligatorio')]
+    public $category = ''; 
     
     public function updated($propertyName)
     {
@@ -25,8 +29,9 @@ class CreateAnnouncement extends Component
     }
     
     public function store(){
+        $category=Category::find($this->category);
         $this->validate(); 
-        Announcement::create([
+        $category->announcements()->create([
             'name'=>$this->name,
             'description'=>$this->description,
             'price'=>$this->price

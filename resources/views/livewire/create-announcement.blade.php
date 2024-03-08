@@ -10,7 +10,7 @@
         </div> --}}
         <div class="py-2 mb-3">
             <label for="name" class="form-label">Nome oggetto:</label>
-            <input type="text" class="form-control" id="name" wire:model.live="name" placeholder="es. Mario Rossi">
+            <input type="text" class="form-control" id="name" wire:model.live="name"
             @error('name')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
@@ -29,6 +29,15 @@
             @error('price')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
+        </div>
+        <div class="py-2 mb-3">
+            <label for="category" class="form-label">Categoria:</label>
+            <select id="category" class="form-select" wire:model.defer='category'>
+                <option value="">Scegli una categoria</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-outline-light mt-2">Inserisci</button>

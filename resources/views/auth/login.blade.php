@@ -1,4 +1,8 @@
 <x-layout>
+    @if (session('status'))
+        <div class="alert alert-success">{{ session('status') }}</div>
+    @endif
+    
     <div class="container py-4">
         <div class="row pt-3 pb-4 justify-content-center">
             <div class="col-12 col-md-6">
@@ -7,11 +11,12 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <form action="{{route('login')}}" method="POST">
+                <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="py-2 mb-3">
                         <label for="email" class="form-label">Inserisci la tua email:</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="es.: mariorossi@email.com">
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="es.: mariorossi@email.com">
                     </div>
                     <div class="py-2 mb-3">
                         <label for="password" class="form-label">Inserisci la tua password:</label>
@@ -24,4 +29,5 @@
             </div>
         </div>
     </div>
+
 </x-layout>
