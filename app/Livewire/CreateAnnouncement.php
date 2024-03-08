@@ -3,11 +3,40 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Announcement;
+use Livewire\Attributes\Validate;
 
 class CreateAnnouncement extends Component
 {
-    public function render()
+    #[Validate('required', message: 'Il campo è obbligatorio')]
+    #[Validate('min:5', message: 'Il nome è troppo corto')]
+    public $name = '';
+    
+    #[Validate('required', message: 'Il campo è obbligatorio')]
+    #[Validate('min:5', message: 'La descrizione è troppo corta')]
+    public $description = '';
+    
+    #[Validate('required', message: 'Il campo è obbligatorio')] 
+    public $price = '';
+    
+    public function updated($propertyName)
     {
+        $this->validateOnly($propertyName);
+    }
+    
+    public function store(){
+        $this->validate(); 
+        Announcement::create([
+            'name'=>$this->name,
+            'description'=>$this->description,
+            'price'=>$this->price
+        ]);
+        $this->reset();
+        session()->flash('status', 'Annuncio caricato correttamente');
+    }
+    
+    public function render()
+    {   
         return view('livewire.create-announcement');
     }
 }
