@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
 use Livewire\Attributes\Validate;
+use Illuminate\Support\Facades\Auth;
 
 class CreateAnnouncement extends Component
 {
@@ -31,11 +32,12 @@ class CreateAnnouncement extends Component
     public function store(){
         $category=Category::find($this->category);
         $this->validate(); 
-        $category->announcements()->create([
+       $announcement = $category->announcements()->create([
             'name'=>$this->name,
             'description'=>$this->description,
             'price'=>$this->price
         ]);
+        Auth::user()->announcements()->save($announcement);
         $this->reset();
         session()->flash('status', 'Annuncio caricato correttamente');
     }
