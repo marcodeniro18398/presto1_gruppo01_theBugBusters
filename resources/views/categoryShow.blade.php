@@ -15,7 +15,7 @@
                             <h5 class="card-title">{{ $announcement->name }}</h5>
                             <p class="card-text">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}</p>
-                            <a href="" class="btn btn-primary ">dettagli!</a>
+                            <a href="{{ route('announcements.show', compact('announcement')) }}" class="btn btn-primary ">dettagli!</a>
                             <a href="" class="btn btn-primary ">Categoria:{{ $announcement->category->name }}</a>
                             <p class="text-muted">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }} da:
                                 {{ $announcement->user->name ?? '' }}</p>
@@ -25,7 +25,7 @@
             @empty
             <div class="col-12 col-md-8">
                 <p class="">Non sono presenti annunci per questa categoria!</p>
-                <p><a href="{{route('announcements.create')}}"></a></p>
+                <p>Pubblicane uno: <a href="{{ route('announcements.create') }}">Nuovo annuncio</a></p>
             </div>
             @endforelse
         </div>

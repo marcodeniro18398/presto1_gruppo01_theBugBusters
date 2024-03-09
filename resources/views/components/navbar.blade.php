@@ -10,6 +10,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Homepage</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ route('announcements.index') }}">Annunci</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -48,7 +51,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Profilo</a></li>
-                            <li><a class="dropdown-item" href="{{ route('announcement.create') }}">Inserisci un annuncio</a>
+                            <li><a class="dropdown-item" href="{{ route('announcements.create') }}">Inserisci un annuncio</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
