@@ -16,7 +16,7 @@
                             <p class="card-text">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}</p>
                             <a href="{{ route('announcements.show', compact('announcement')) }}" class="btn btn-primary ">dettagli!</a>
-                            <a href="" class="btn btn-primary ">Categoria:{{ $announcement->category->name }}</a>
+                            <p href="{{ route('categoryShow', ['category'=>$announcement->category]) }}" class="btn btn-primary ">Categoria:{{ $announcement->category->name }}</p>
                             <p class="text-muted">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }} da:
                                 {{ $announcement->user->name ?? '' }}</p>
                         </div>

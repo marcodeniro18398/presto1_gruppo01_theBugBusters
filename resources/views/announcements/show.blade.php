@@ -51,7 +51,7 @@
                 <h5 class="card-title">{{ $announcement->name }}</h5>
                 <p class="card-text">{{ $announcement->description }}</p>
                 <p class="card-text">{{ $announcement->price }}</p>
-                <a href="" class="btn btn-primary  my-2">Categoria: {{ $announcement->category->name }}</a>
+                <a href="{{ route('categoryShow', ['category'=>$announcement->category]) }}" class="btn btn-primary  my-2">Categoria: {{ $announcement->category->name }}</a>
                 <p class="fst-italic">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
             </div>
         </div>
