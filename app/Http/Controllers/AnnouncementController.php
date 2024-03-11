@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class AnnouncementController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');
+        $this->middleware('auth')->except('indexAnnouncement', 'showAnnouncement');
     }
     
     public function create(){
@@ -19,8 +19,8 @@ class AnnouncementController extends Controller
         return view('announcements.show', compact('announcement'));
     }
     
-    public function indexAnnouncement(Announcement $announcement){
-        $announcements = Announcement::paginate(8);
+    public function indexAnnouncement(){
+        $announcements = Announcement::orderBy('created_at', 'desc')->paginate(8);
         return view('announcements.index', compact('announcements'));
     }
 }
