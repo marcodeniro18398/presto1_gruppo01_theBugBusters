@@ -51,5 +51,6 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::registerView(function () {
             return view('auth.register')->with('status', 'Ti sei registrato correttamente!');
         });
+        
     }
 }

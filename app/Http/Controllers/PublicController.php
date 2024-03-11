@@ -12,7 +12,7 @@ class PublicController extends Controller
 
     
     public function homepage(){
-        $announcements = Announcement::take(6)->get()->sortByDesc('created_at');
+        $announcements = Announcement::orderBy('created_at', 'desc')->take(6)->get();
         return view('homepage', compact('announcements'));
     }
     public function categoryShow(Category $category){
