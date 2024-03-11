@@ -47,10 +47,10 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.login')->with('success', 'Ti sei logatto correttamente! ');
 
         });
-           
+
         Fortify::registerView(function () {
             return view('auth.register')->with('status', 'Ti sei registrato correttamente!');
         });
-        
+
     }
 }
