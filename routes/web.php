@@ -25,5 +25,8 @@ Route::get('/dettaglio/annuncio/{announcement}', [AnnouncementController::class,
 Route::get('/tutti/annunci', [AnnouncementController::class, 'indexAnnouncement'])->name('announcements.index');
 //*Rotte revisore
 Route::get('/revisore/home', [RevisorController::class, 'index'])->name('revisor.index');
-Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.accept_announcement');
-Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');
+Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->middleware('isRevisor')->name('revisor.accept_announcement');
+Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.reject_announcement');
+// rotte del footer
+Route::get('/richiesta/revisore/', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');

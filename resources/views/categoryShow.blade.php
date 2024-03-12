@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="row justify-content-center ">
-            @forelse ($category->announcements as $announcement)
+            @forelse ($announcements as $announcement)
                 <div class="col-12 col-md-3 my-3">
                     <div class="card" style="width: 18rem;">
                         <img src="https://picsum.photos/200" class="card-img-top" alt="...">

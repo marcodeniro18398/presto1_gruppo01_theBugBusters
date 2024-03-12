@@ -3,7 +3,8 @@
         <div class="nav-custom col-md-8">
         </div>
         <div class="col-12 col-md-8 position-absolute2">
-            <div class="d-flex justify-content-evenly h-100 nav-color collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex justify-content-evenly h-100 nav-color collapse navbar-collapse"
+                id="navbarSupportedContent">
                 <ul class="d-flex py-3 px-0 my-0 justify-content-evenly align-items-center w-100">
                     <li class="">
                         <a class="active" aria-current="page" href="{{ route('homepage') }}">Homepage</a>
@@ -18,7 +19,8 @@
                         </a>
                         <ul class="dropdown-menu bg-grey">
                             @foreach ($categories as $category)
-                                <li><a class="dropdown-item" href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
+                                <li><a class="dropdown-item"
+                                        href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
                                 </li>
                             @endforeach
                         </ul>
@@ -36,15 +38,22 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                
                             </ul>
                         </li>
                     @endguest
                     @auth
                         <li class="dropdown nav-item">
-                            <a class="dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="dropdown-toggle nav-link position-absolute" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Ciao, {{ Auth::user()->name }}
+                                @if (Auth::user()->is_revisor)
+                                    <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger ms-1">
+                                        {{ App\Models\Announcement::toBeRevisionedCount() }}
+                                        <span class="visually-hidden ">
+                                            UnreadMessage
+                                        </span>
+                                    </span>
+                                @endif
                             </a>
                             <ul class="dropdown-menu bg-grey">
                                 <li class=""><a class=" dropdown-item" href="#">Profilo</a></li>
@@ -52,18 +61,10 @@
                                         annuncio</a>
                                 </li>
                                 @if (Auth::user()->is_revisor)
-                                <li><a class="dropdown-item" href="{{route('revisor.index')}}">Zona Revisore
-                                <span class="position-absolute top-0 start-100">
-                                    {{-- {{App\Models\Announcement::toBeRevisionedCount()}} --}}
-                                    <span class="visually-hidden ">
-                                        UnreadMessage
+                                    <li><a class="dropdown-item " href="{{ route('revisor.index') }}">Zona Revisore
 
-                                    </span>
-
-                                </span>
-                                </a>
-                                </li>
-                                    
+                                        </a>
+                                    </li>
                                 @endif
                                 <li>
                                     <hr class="dropdown-divider bg-champagnePink">
