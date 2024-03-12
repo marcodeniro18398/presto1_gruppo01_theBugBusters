@@ -36,7 +36,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                
                             </ul>
                         </li>
                     @endguest
@@ -51,6 +51,20 @@
                                 <li><a class="dropdown-item" href="{{ route('announcements.create') }}">Inserisci un
                                         annuncio</a>
                                 </li>
+                                @if (Auth::user()->is_revisor)
+                                <li><a class="dropdown-item" href="{{route('revisor.index')}}">Zona Revisore
+                                <span class="position-absolute top-0 start-100">
+                                    {{-- {{App\Models\Announcement::toBeRevisionedCount()}} --}}
+                                    <span class="visually-hidden ">
+                                        UnreadMessage
+
+                                    </span>
+
+                                </span>
+                                </a>
+                                </li>
+                                    
+                                @endif
                                 <li>
                                     <hr class="dropdown-divider bg-champagnePink">
                                 </li>
@@ -58,6 +72,7 @@
                                         onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">Logout</a>
                                     <form action="{{ route('logout') }}" method="POST" id="form-logout">@csrf</form>
                                 </li>
+
                             </ul>
                         </li>
                     @endauth
