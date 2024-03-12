@@ -58,7 +58,7 @@
                         Products
                     </h6>
                     <p>
-                        <a href="{{route('become.revisor')}}" class="text-reset">Lavora con noi!</a>
+                        <a href="{{route('work-with-us')}}" class="text-reset">Lavora con noi!</a>
                     </p>
                     <p>
                         <a href="#!" class="text-reset">React</a>

@@ -14,7 +14,7 @@
         <h2>ecco i suoi dati: {{ $user->name }}</h2>
         <h2>email: {{ $user->email }}</h2>
         <p>se vuoi renderlo revisore clicca qui!</p>
-        <a href="{{route('make.revisor', compact('user'))}}">rendi revisore!</a>
+        <a href="{{route('revisor.make', compact('user'))}}">Rendi revisore!</a>
     </div>
 </body>
 

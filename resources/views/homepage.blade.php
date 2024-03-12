@@ -1,5 +1,14 @@
 <x-layout>
     <x-header />
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                @if (session('access.denied'))
+                    <div class="alert alert-danger text-center">{{ session('access.denied') }}</div>
+                @endif
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
@@ -15,8 +24,10 @@
                             <h5 class="card-title">{{ $announcement->name }}</h5>
                             <p class="card-text">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}</p>
-                            <a href="{{ route('announcements.show', compact('announcement')) }}" class="btn btn-primary ">dettagli!</a>
-                            <a href="{{ route('categoryShow', ['category'=>$announcement->category]) }}" class="btn btn-primary ">Categoria:{{ $announcement->category->name }}</a>
+                            <a href="{{ route('announcements.show', compact('announcement')) }}"
+                                class="btn btn-primary ">dettagli!</a>
+                            <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
+                                class="btn btn-primary ">Categoria:{{ $announcement->category->name }}</a>
                             <p class="text-muted">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
                         </div>
                     </div>

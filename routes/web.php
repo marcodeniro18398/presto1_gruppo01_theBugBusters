@@ -24,9 +24,11 @@ Route::get('/announcement/create', [AnnouncementController::class, 'create'])->n
 Route::get('/dettaglio/annuncio/{announcement}', [AnnouncementController::class, 'showAnnouncement'])->name('announcements.show');
 Route::get('/tutti/annunci', [AnnouncementController::class, 'indexAnnouncement'])->name('announcements.index');
 //*Rotte revisore
-Route::get('/revisore/home', [RevisorController::class, 'index'])->name('revisor.index');
+Route::get('/revisore/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->middleware('isRevisor')->name('revisor.accept_announcement');
 Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.reject_announcement');
 // rotte del footer
-Route::get('/richiesta/revisore/', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
-Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+Route::get('/lavora-con-noi', [PublicController::class, 'workWithUs'])->name('work-with-us');
+Route::post('/lavora-con-noi/submit', [PublicController::class, 'workWithUsSubmit'])->name('work-with-us.submit');
+Route::post('/richiesta/revisore/', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('revisor.become');
+Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('revisor.make');
