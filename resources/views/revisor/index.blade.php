@@ -39,6 +39,14 @@
                         </form>
                     </div>
                 </div>
+                @elseif ($announcement_to_undo)
+            
+            
+                <form action="{{ route('revisor.undo', ['announcement' => $announcement_to_undo]) }}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit" class="btn btn-danger shadow">Annulla operazione</button>
+                </form>
             @endif
             <div class="d-flex justify-content-center">
                 {{-- {{ $announcements->links() }} --}}
