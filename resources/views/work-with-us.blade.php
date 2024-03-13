@@ -24,8 +24,7 @@
                     <div class="py-2 mb-3">
                         <label for="email" class="form-label">Inserisci la tua email:</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
-                        name="email" placeholder="es.: mariorossi@email.com">
-                        
+                        name="email" placeholder="es.: rossimario@email.com">
                         @error('email')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
