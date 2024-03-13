@@ -32,3 +32,5 @@ Route::get('/lavora-con-noi', [PublicController::class, 'workWithUs'])->name('wo
 Route::post('/lavora-con-noi/submit', [PublicController::class, 'workWithUsSubmit'])->name('work-with-us.submit');
 Route::post('/richiesta/revisore/', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('revisor.become');
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('revisor.make');
+// rotte ricerca annuncio
+Route::get('/ricerca/annuncio', [PublicController::class, 'searchAnnouncements'])->name('announcements.search');

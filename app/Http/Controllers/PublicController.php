@@ -7,7 +7,7 @@ use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use App\Http\Controllers\PublicController;
+
 
 class PublicController extends Controller
 {
@@ -31,4 +31,8 @@ class PublicController extends Controller
         
     }
     
+    public function searchAnnouncements(Request $request){
+        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+        return view('announcements.index', compact('announcements'));
+    }
 }
