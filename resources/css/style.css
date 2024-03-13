@@ -71,7 +71,7 @@ body {
 
 .img-bg-header {
     background: url(../../public/media/img-header.jpg);
-    height: 100vh;
+    height: 70vh;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
