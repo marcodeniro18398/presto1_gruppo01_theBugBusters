@@ -43,13 +43,13 @@
                     @endguest
                     @auth
                         <li class="dropdown nav-item">
-                            <a class="dropdown-toggle nav-link position-absolute" href="#" role="button"
+                            <a class="dropdown-toggle nav-link" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Ciao, {{ Auth::user()->name }}
                                 @if (Auth::user()->is_revisor)
                                     <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger ms-1">
                                         {{ App\Models\Announcement::toBeRevisionedCount() }}
-                                        <span class="visually-hidden ">
+                                        <span class="visually-hidden">
                                             UnreadMessage
                                         </span>
                                     </span>

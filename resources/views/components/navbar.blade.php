@@ -1,4 +1,4 @@
-<nav class="nav-c fixed-top navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+<nav class="nav-c fixed-top navbar font-primary text-uppercase navbar-expand-lg bg-grey" data-bs-theme="dark">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
                         aria-expanded="false">
                         Categorie
                     </a>
-                    <ul class="dropdown-menu ">
+                    <ul class="dropdown-menu">
                         @foreach ($categories as $category)
                             <li><a class="dropdown-item text-white"
                                     href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
@@ -48,13 +48,28 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Ciao, {{ Auth::user()->name }}
+                            @if (Auth::user()->is_revisor)
+                                <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger ms-1">
+                                    {{ App\Models\Announcement::toBeRevisionedCount() }}
+                                    <span class="visually-hidden">
+                                        UnreadMessage
+                                    </span>
+                                </span>
+                            @endif
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Profilo</a></li>
-                            <li><a class="dropdown-item" href="{{ route('announcements.create') }}">Inserisci un annuncio</a>
+                            <li><a class="dropdown-item" href="{{ route('announcements.create') }}">Inserisci un
+                                    annuncio</a>
                             </li>
+                            @if (Auth::user()->is_revisor)
+                                <li><a class="dropdown-item " href="{{ route('revisor.index') }}">Zona Revisore
+
+                                    </a>
+                                </li>
+                            @endif
                             <li>
-                                <hr class="dropdown-divider">
+                                <hr class="dropdown-divider bg-champagnePink">
                             </li>
                             <li><a class="dropdown-item" href="{{ route('homepage') }}"
                                     onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">Logout</a>

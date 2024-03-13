@@ -24,7 +24,7 @@
 
     {{-- <x-navbar /> --}}
 
-    <x-navbarCustom />
+    <x-navbar />
 
     {{ $slot }}
 

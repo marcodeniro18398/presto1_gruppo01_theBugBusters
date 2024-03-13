@@ -4,12 +4,14 @@
             <h1 class="color-grey pt-5 text-uppercase font-primary display-5 fw-bold">Presto.it</h1>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-8">
-            <form action="{{ route('announcements.search') }}" class="d-flex" role="search" method="GET">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+    {{-- <div class="justify-content-center"> --}}
+    <form action="{{ route('announcements.search') }}" class="row justify-content-center flex-column align-items-center" role="search" method="GET">
+        <div class="col-12 col-md-3 justify-content-center py-2">
+            <input class="form-control" type="search" placeholder="Cosa vuoi cercare?" aria-label="Search" name="searched">
         </div>
-    </div>
+        <div class="col-12 col-md-1 d-flex justify-content-center">
+            <button class="btn btn-outline-dark" type="submit">Ricerca</button>
+        </div>
+    </form>
+    {{-- </div> --}}
 </div>

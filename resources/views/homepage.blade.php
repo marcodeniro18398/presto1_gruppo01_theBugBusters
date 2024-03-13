@@ -12,7 +12,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <h5 class="py-5">Tutti gli annunci!</h5>
+                <h5 class="py-5 text-uppercase font-primary">Tutti gli annunci!</h5>
             </div>
         </div>
         <div class="row justify-content-center ">

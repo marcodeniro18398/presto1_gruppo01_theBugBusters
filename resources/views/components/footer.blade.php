@@ -1,7 +1,7 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+<footer class="text-center text-lg-start img-bg-footer">
     <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-custom-footer">
         <!-- Left -->
         <div class="me-5 d-none d-lg-block">
             <span>Get connected with us on social networks:</span>
@@ -11,22 +11,22 @@
         <!-- Right -->
         <div>
             <a href="" class="me-4 text-reset">
-                <i class="fab fa-facebook-f"></i>
+                <i class="bi bi-facebook"></i>
             </a>
             <a href="" class="me-4 text-reset">
-                <i class="fab fa-twitter"></i>
+                <i class="bi bi-twitter-x"></i>
             </a>
             <a href="" class="me-4 text-reset">
-                <i class="fab fa-google"></i>
+                <i class="bi bi-google"></i>
             </a>
             <a href="" class="me-4 text-reset">
-                <i class="fab fa-instagram"></i>
+                <i class="bi bi-instagram"></i>
             </a>
             <a href="" class="me-4 text-reset">
-                <i class="fab fa-linkedin"></i>
+                <i class="bi bi-linkedin"></i>
             </a>
             <a href="" class="me-4 text-reset">
-                <i class="fab fa-github"></i>
+                <i class="bi bi-github"></i>
             </a>
         </div>
         <!-- Right -->

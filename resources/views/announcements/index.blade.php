@@ -1,9 +1,8 @@
 <x-layout>
-    <div class="container-fluid">
+    <div class="container-fluid  margin-title">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <h1>Presto.it</h1>
-                <h5>Tutte le categorie!</h5>
+                <h2 class=" text-uppercase font-primary ">Tutte le categorie!</h2>
             </div>
         </div>
         <div class="row justify-content-center">
