@@ -6,7 +6,7 @@
                 <h5>Tutte le categorie!</h5>
             </div>
         </div>
-        <div class="row justify-content-center ">
+        <div class="row mb-2 justify-content-center ">
             @forelse ($announcements as $announcement)
                 <div class="col-12 col-md-3 my-3">
                     <div class="card" style="width: 18rem;">
