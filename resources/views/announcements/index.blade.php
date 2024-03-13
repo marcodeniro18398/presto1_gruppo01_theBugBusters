@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            @foreach ($announcements as $announcement)
+            @forelse ($announcements as $announcement)
                 <div class="col-12 col-md-4 my-3 mx-auto d-flex justify-content-evenly">
                     <div class="card" style="width: 18rem;">
                         <img src="https://picsum.photos/200" class="card-img-top" alt="...">
@@ -17,14 +17,20 @@
                             <p class="card-text">{{ $announcement->price }}</p>
                             <a href="{{ route('announcements.show', compact('announcement')) }}"
                                 class="btn btn-primary ">dettagli!</a>
-                            <a href="{{ route('categoryShow', ['category'=>$announcement->category]) }}" class="btn btn-primary ">Categoria:{{ $announcement->category->name }}</a>
+                            <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
+                                class="btn btn-primary ">Categoria:{{ $announcement->category->name }}</a>
                             <p class="text-muted">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }} da:
                                 {{ $announcement->user->name ?? '' }}</p>
                         </div>
                     </div>
-
                 </div>
-            @endforeach
+            @empty
+                <div class="col-12">
+                    <div class="alert alert-warning text-center">
+                        <p class="lead">Non ci sono annunci per questa ricerca!</p>
+                    </div>
+                </div>
+            @endforelse
             <div class="d-flex justify-content-center">
                 {{ $announcements->links() }}
             </div>
