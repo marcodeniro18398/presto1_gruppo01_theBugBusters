@@ -99,8 +99,6 @@ body {
     border-top: var(--bs-border-width) var(--bs-border-style) var(--champagne-pink) !important;
 }
 
-
-
 .nav-custom {
     height: 80px;
     background-color: var(--grey);
@@ -137,7 +135,7 @@ a {
 }
 
 .margin-title{
-    margin-top: 100px;
+    margin-top: 130px;
 }
 
 

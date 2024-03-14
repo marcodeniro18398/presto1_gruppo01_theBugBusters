@@ -6,7 +6,7 @@
     <div class="container py-4">
         <div class="row pt-3 pb-4 justify-content-center">
             <div class="col-12 col-md-6">
-                <h2 class="text-uppercase">Lavora con noi</h2>
+                <h2 class="text-uppercase margin-title">Lavora con noi</h2>
             </div>
         </div>
         <div class="row justify-content-center">
