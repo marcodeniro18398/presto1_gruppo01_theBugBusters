@@ -64,7 +64,7 @@
                     </div>
                 </div>
             @endif
-            @dump($announcement)
+
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-outline-light mt-2">Inserisci</button>
             </div>

@@ -14,29 +14,33 @@ class CreateAnnouncement extends Component
 {
     use WithFileUploads;
     
-    #[Validate('image', message: 'I file devono essere immagini')]
-    #[Validate('required', message: 'L\'immagine è richiesta')]
-    #[Validate('max:1024', message: 'L\'immagine deve massima 5mb')]
+    
     public $images = [];
-    
-    #[Validate('image', message: 'I file devono essere immagini')]
-    #[Validate('required', message: 'L\'immagine è richiesta')]
-    #[Validate('max:1024', message: 'L\'immagine deve massima 5mb')]
     public $temporary_images;
-    
-    #[Validate('required', message: 'Il campo è obbligatorio')]
-    #[Validate('min:5', message: 'Il nome è troppo corto')]
     public $name;
-    
-    #[Validate('required', message: 'Il campo è obbligatorio')]
-    #[Validate('min:5', message: 'La descrizione è troppo corta')]
     public $description;
-    
-    #[Validate('required', message: 'Il campo è obbligatorio')]
-    public $price;
-    
-    #[Validate('required', message: 'Il campo è obbligatorio')]
+    public $price;    
     public $category;
+    
+    protected $rules = [
+        'name' => 'required|min:5',
+        'category' => 'required',
+        'description' => 'required|min:5',
+        'price'=>'required',
+        'images.' => 'image|max:1024',
+        'temporary_images.' => 'image|max:1024'
+    ];
+    
+    protected $messages = [
+        'required' => 'Il campo è obbligatorio',
+        'min' => 'Il campo è troppo corto',
+        'temporary_images..image' => 'I file devono essere immagini',
+        'temporary_images..max' => 'L\'immagine dev\'essere massima 5mb',
+        'images.image' => 'I file devono essere immagini',
+        'images.max' => 'L\'immagine dev\'essere massima 5mb'
+    ];
+    
+    
     
     public function updated($propertyName)
     {
@@ -58,40 +62,37 @@ class CreateAnnouncement extends Component
                 unset($this->images[$key]);
             }
         }
-   
+        
         public $announcement;
         public $image;
-
+        
         public function store()
         {
-        //    $announcement = $category->announcements()->create([
-           
-        //     ]);
             
             $this->validate();
             
-            $announcement = Category::find($this->category)->announcements()->create([
-
-            'name' => $this->name,
-            'description' => $this->description,
-            'price' => $this->price,]);
-
-            if(count($this->images)){
-                foreach ($this->images as $image){
-                    $announcement->images()->create(['path'=>$image->store('images', 'public')]);
+            $this->announcement = Category::find($this->category)->announcements()->create([
+                
+                'name' => $this->name,
+                'description' => $this->description,
+                'price' => $this->price,]);
+                
+                if(count($this->images)){
+                    foreach ($this->images as $image){
+                        $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
+                    }
                 }
+                
+                $this->announcement->user()->associate(Auth::user());
+                $this->announcement->save();
+                
+                session()->flash('status', 'Annuncio caricato correttamente, sarà pubblicato dopo la revisione!');
+                $this->reset();
             }
             
-            $this->announcement->user()->associate(Auth::user());
-            $this->announcement->save();
-            
-            session()->flash('status', 'Annuncio caricato correttamente');
-            $this->reset();
+            public function render()
+            {
+                return view('livewire.create-announcement');
+            }
         }
         
-        public function render()
-        {
-            return view('livewire.create-announcement');
-        }
-    }
-    
