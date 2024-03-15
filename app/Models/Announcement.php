@@ -12,7 +12,7 @@ class Announcement extends Model
 {
     use HasFactory, Searchable;
     protected $fillable=[
-        'name','description','price', 'category'
+        'name','description','price', 'category_id'
     ];
     public function toSearchableArray()
     {

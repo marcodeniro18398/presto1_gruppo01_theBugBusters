@@ -32,7 +32,7 @@
             </div>
             <div class="py-2 mb-3">
                 <label for="category" class="form-label">Categoria:</label>
-                <select id="category" class="form-select" wire:model.defer='category'>
+                <select id="category" class="form-select" wire:model.defer="category">
                     <option value="">Scegli una categoria</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -64,6 +64,7 @@
                     </div>
                 </div>
             @endif
+            @dump($announcement)
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-outline-light mt-2">Inserisci</button>
             </div>

@@ -16,15 +16,14 @@ return new class extends Migration
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->dropForeign('category_id');
-            $table->dropColumn('category_id');
+            $table->dropForeign(['category_id']);
+            $table->dropColumn(['category_id']);
         });
     }
 };

@@ -58,28 +58,35 @@ class CreateAnnouncement extends Component
                 unset($this->images[$key]);
             }
         }
-        
+   
+        public $announcement;
+        public $image;
+
         public function store()
         {
-            $announcement = $category->announcements()->create([
-                'name' => $this->name,
-                'description' => $this->description,
-                'price' => $this->price,
-            ]);
+        //    $announcement = $category->announcements()->create([
+           
+        //     ]);
             
             $this->validate();
             
-            $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
+            $announcement = Category::find($this->category)->announcements()->create([
+
+            'name' => $this->name,
+            'description' => $this->description,
+            'price' => $this->price,]);
+
             if(count($this->images)){
                 foreach ($this->images as $image){
-                    $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
+                    $announcement->images()->create(['path'=>$image->store('images', 'public')]);
                 }
             }
             
-            Auth::user()->announcements()->save($announcement);
+            $this->announcement->user()->associate(Auth::user());
+            $this->announcement->save();
             
-            $this->reset();
             session()->flash('status', 'Annuncio caricato correttamente');
+            $this->reset();
         }
         
         public function render()
