@@ -20,7 +20,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         @foreach ($categories as $category)
-                            <li><a class="dropdown-item text-white"
+                            <li><a class="dropdown-item"
                                     href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
                             </li>
                         @endforeach
@@ -78,21 +78,43 @@
                         </ul>
                     </li>
                 @endauth
-            </ul>
-            <div>
-                <ul class="d-flex align-items-center m-0 p-0">
-                    <li class="nav-item">
-                        <x-_locale lang="it" />
-                    </li>
-                    <li class="nav-item">
-                        <x-_locale lang="en" />
-                    </li>
-                </ul>
-                {{-- ???????????   TERZA LINGUA?????????????????   --}}
-                {{-- <li class="nav-item">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle hover-none" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="bi bi-binoculars"></i>
+                    </a>
+                    <ul class="dropdown-menu nav-search">
+                        <li><a class="dropdown-item hover-none" href="#">
+                                <form action="{{ route('announcements.search') }}" class="row" role="search"
+                                    method="GET">
+                                    <div class="input-group">
+                                        <input class="form-control input-group-text text-start bg-champagnePink color-grey" type="search"
+                                            placeholder="Cosa vuoi cercare?" aria-label="Search" name="searched">
+                                        <span class="input-group-text bg-grey" id="basic-addon1">
+                                            <button class="btn text-center pb-0" type="submit">
+                                                <i class="bi bi-send color-champagnePink"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </a></li>
+                    </ul>
+                </li>
+                <div>
+                    <ul class="d-flex align-items-center m-0 p-0">
+                        <li class="nav-item">
+                            <x-_locale lang="it" />
+                        </li>
+                        <li class="nav-item">
+                            <x-_locale lang="en" />
+                        </li>
+                    </ul>
+                    {{-- ???????????   TERZA LINGUA?????????????????   --}}
+                    {{-- <li class="nav-item">
                     <x-_locale lang="es" />
                 </li> --}}
-            </div>
+                </div>
+            </ul>
         </div>
     </div>
 </nav>

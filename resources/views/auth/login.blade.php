@@ -31,7 +31,7 @@
                         @enderror
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-outline-light mt-2">Accedi!</button>
+                        <button type="submit" class="btn btn-outline-dark mt-2">Accedi!</button>
                     </div>
                 </form>
             </div>

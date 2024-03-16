@@ -33,7 +33,7 @@
                             name="password_confirmation" placeholder="......">
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-outline-light mt-2">Registrati!</button>
+                        <button type="submit" class="btn btn-outline-dark mt-2">Registrati!</button>
                     </div>
                 </form>
             </div>
