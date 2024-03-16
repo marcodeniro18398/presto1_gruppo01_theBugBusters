@@ -25,7 +25,7 @@
             <a href="" class="me-4 text-reset">
                 <i class="bi bi-linkedin"></i>
             </a> --}}
-            <a href="" class="me-4 text-reset">
+            <a href="https://github.com/Hackademy-134/presto1_gruppo01_theBugBusters" class="me-4 text-reset">
                 <i class="bi bi-github"></i>
             </a>
         </div>

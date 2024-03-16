@@ -100,21 +100,21 @@
                             </a></li>
                     </ul>
                 </li>
-                <div>
-                    <ul class="d-flex align-items-center m-0 p-0">
-                        <li class="nav-item">
-                            <x-_locale lang="it" />
-                        </li>
-                        <li class="nav-item">
-                            <x-_locale lang="en" />
-                        </li>
-                    </ul>
-                    {{-- ???????????   TERZA LINGUA?????????????????   --}}
-                    {{-- <li class="nav-item">
-                    <x-_locale lang="es" />
-                </li> --}}
-                </div>
             </ul>
+            <div>
+                <ul class="d-flex align-items-center m-0 p-0">
+                    <li class="nav-item">
+                        <x-_locale lang="it" />
+                    </li>
+                    <li class="nav-item">
+                        <x-_locale lang="en" />
+                    </li>
+                </ul>
+                {{-- ???????????   TERZA LINGUA?????????????????   --}}
+                {{-- <li class="nav-item">
+                <x-_locale lang="es" />
+            </li> --}}
+            </div>
         </div>
     </div>
 </nav>
