@@ -36,10 +36,10 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
                             <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
-                            <li>
+                            {{-- <li>
                                 <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </li> --}}
+                            {{-- <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
                         </ul>
                     </li>
                 @endguest
@@ -79,6 +79,20 @@
                     </li>
                 @endauth
             </ul>
+            <div>
+                <ul class="d-flex align-items-center m-0 p-0">
+                    <li class="nav-item">
+                        <x-_locale lang="it" />
+                    </li>
+                    <li class="nav-item">
+                        <x-_locale lang="en" />
+                    </li>
+                </ul>
+                {{-- ???????????   TERZA LINGUA?????????????????   --}}
+                {{-- <li class="nav-item">
+                    <x-_locale lang="es" />
+                </li> --}}
+            </div>
         </div>
     </div>
 </nav>

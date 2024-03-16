@@ -14,16 +14,6 @@
 
 <body class="myblack">
 
-    {{-- <x-navbarCustom /> --}}
-{{--
-    @if ()
-    <x-navbar />
-    @else
-    <x-navbarCustom />
-    @endif --}}
-
-    {{-- <x-navbar /> --}}
-
     <x-navbar />
 
     {{ $slot }}
