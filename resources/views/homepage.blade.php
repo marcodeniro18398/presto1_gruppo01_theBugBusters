@@ -20,7 +20,7 @@
                 <div class="col-12 col-md-4 my-3 d-flex justify-content-around">
                     <div class="card" style="width: 18rem;">
                         <img src="{{ !$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(200, 150) : 'https://picsum.photos/200' }}"
-                      
+
                             class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{ $announcement->name }}</h5>
