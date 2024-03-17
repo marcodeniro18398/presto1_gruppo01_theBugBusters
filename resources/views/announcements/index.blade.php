@@ -18,8 +18,7 @@
                                 class="btn btn-primary ">dettagli!</a>
                             <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
                                 class="btn btn-primary ">Categoria:{{ $announcement->category->name }}</a>
-                            <p class="card-text pt-3 fst-italic">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }} da:
-                                {{ $announcement->user->name ?? '' }}</p>
+                            <p class="card-text pt-3 fst-italic">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }} da: {{ $announcement->user->name ?? '' }}</p>
                         </div>
                     </div>
                 </div>
