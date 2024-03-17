@@ -7,12 +7,12 @@
     --timberwolf: #d6ccc2ff;
     --linen: #f5ebe0ff;
     --champagne-pink: #e3d5caff;
-    --pale-dogwood: #d5bdafff;
+    --pale-dogwood: #d5bdaf;
     --light-grey: #9D9D9D;
     
     --rosa1: #F7E1D7;
     
-    --grey: #2F2F2F;
+    --grey: #2f2f2f;
     
     --marco1: #96705B;
     --marco2: #AB8476;
@@ -206,6 +206,43 @@ a {
 
 /*! Card custom */
 
+.card-cascade{
+ z-index: 1;
+    margin-right: 4%;
+    margin-left: 4%;
+    background: #fff;
+    border-radius: 0 0 .25rem .25rem;
+    box-shadow: 0 8px 15px 5px rgba(47, 47, 47, 0.825),0 15px 10px 2px rgba(213, 189, 175, 0.882);
+}
+
+.card-custom{
+    position: relative !important;
+    overflow: hidden !important;
+    margin-top: -1rem !important;
+    margin-right: 6% !important;
+    margin-left: 6% !important;
+    border-radius: .25rem !important;
+    box-shadow: 0 8px 15px 0 rgba(221, 224, 226, 0.545),0 4px 20px 0 rgba(213, 189, 175, 0.739) !important;
+} 
+
+
+.card-footer-custom{
+    color: var(--champagne-pink)!important;
+    background-color: var(--grey)!important;
+    border-top: 1px solid var(--champagne-pink)!important;
+    font-style: italic !important;
+    opacity: 50%;
+}
+
+.border-category{
+    border-bottom: 1px solid var(--champagne-pink)!important;
+    width: 100%;
+}
+
+.card:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+}
 
 
 

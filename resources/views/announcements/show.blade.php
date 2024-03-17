@@ -50,9 +50,6 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
-                    <div class="col-12 col-md-3 my-3">
-                        <div>
-
                         </div>
                     </div>
                 </div>
