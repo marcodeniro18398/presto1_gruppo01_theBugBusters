@@ -1,9 +1,8 @@
 <x-layout>
     @if (session('status'))
-        <div class="alert alert-success">{{ session('status') }}</div>
+    <div class="alert alert-success">{{ session('status') }}</div>
     @endif
-
-    <div class="container py-4">
+    <div class="container margin-title">
         <div class="row pt-3 pb-4 justify-content-center">
             <div class="col-12 col-md-6">
                 <h2 class="text-uppercase">Registrati con noi</h2>
@@ -33,7 +32,7 @@
                             name="password_confirmation" placeholder="......">
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-outline-light mt-2">Registrati!</button>
+                        <button type="submit" class="btn btn-outline-dark mt-2">Registrati!</button>
                     </div>
                 </form>
             </div>

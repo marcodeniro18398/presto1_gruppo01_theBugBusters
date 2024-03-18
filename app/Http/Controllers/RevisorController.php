@@ -16,7 +16,7 @@ class RevisorController extends Controller
         $announcement_to_check=Announcement::where('is_accepted', null)->first();
         $announcement_to_undo=Announcement::whereNotNull('is_accepted')->get()->last();
     return view('revisor.index', compact('announcement_to_check', 'announcement_to_undo'));
-    
+
     }
 
     public function acceptAnnouncement(Announcement $announcement){
@@ -35,7 +35,7 @@ class RevisorController extends Controller
 
     public function becomeRevisor(){
         Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
-        return redirect()->back()->with('message', 'Complimenti, hai richiesto di divenatre revisore correttamente!');
+        return redirect()->back()->with('message', 'Complimenti, hai richiesto di diventare revisore correttamente!');
     }
 
     public function makeRevisor(User $user){

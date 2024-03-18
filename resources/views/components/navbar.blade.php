@@ -1,4 +1,4 @@
-<nav class="nav-c fixed-top navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+<nav class="nav-c fixed-top navbar font-primary text-uppercase navbar-expand-lg bg-grey" data-bs-theme="dark">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,9 +18,9 @@
                         aria-expanded="false">
                         Categorie
                     </a>
-                    <ul class="dropdown-menu ">
+                    <ul class="dropdown-menu">
                         @foreach ($categories as $category)
-                            <li><a class="dropdown-item text-white"
+                            <li><a class="dropdown-item"
                                     href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
                             </li>
                         @endforeach
@@ -36,10 +36,10 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
                             <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
-                            <li>
+                            {{-- <li>
                                 <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </li> --}}
+                            {{-- <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
                         </ul>
                     </li>
                 @endguest
@@ -48,13 +48,28 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Ciao, {{ Auth::user()->name }}
+                            @if (Auth::user()->is_revisor)
+                                <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger ms-1">
+                                    {{ App\Models\Announcement::toBeRevisionedCount() }}
+                                    <span class="visually-hidden">
+                                        UnreadMessage
+                                    </span>
+                                </span>
+                            @endif
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Profilo</a></li>
-                            <li><a class="dropdown-item" href="{{ route('announcements.create') }}">Inserisci un annuncio</a>
+                            <li><a class="dropdown-item" href="{{ route('announcements.create') }}">Inserisci un
+                                    annuncio</a>
                             </li>
+                            @if (Auth::user()->is_revisor)
+                                <li><a class="dropdown-item " href="{{ route('revisor.index') }}">Zona Revisore
+
+                                    </a>
+                                </li>
+                            @endif
                             <li>
-                                <hr class="dropdown-divider">
+                                <hr class="dropdown-divider bg-champagnePink">
                             </li>
                             <li><a class="dropdown-item" href="{{ route('homepage') }}"
                                     onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">Logout</a>
@@ -63,7 +78,43 @@
                         </ul>
                     </li>
                 @endauth
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle hover-none" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="bi bi-binoculars"></i>
+                    </a>
+                    <ul class="dropdown-menu nav-search">
+                        <li><a class="dropdown-item hover-none" href="#">
+                                <form action="{{ route('announcements.search') }}" class="row" role="search"
+                                    method="GET">
+                                    <div class="input-group">
+                                        <input class="form-control input-group-text text-start bg-champagnePink color-grey" type="search"
+                                            placeholder="Cosa vuoi cercare?" aria-label="Search" name="searched">
+                                        <span class="input-group-text bg-grey" id="basic-addon1">
+                                            <button class="btn text-center pb-0" type="submit">
+                                                <i class="bi bi-send color-champagnePink"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </a></li>
+                    </ul>
+                </li>
             </ul>
+            <div>
+                <ul class="d-flex align-items-center m-0 p-0">
+                    <li class="nav-item">
+                        <x-_locale lang="it" />
+                    </li>
+                    <li class="nav-item">
+                        <x-_locale lang="en" />
+                    </li>
+                </ul>
+                {{-- ???????????   TERZA LINGUA?????????????????   --}}
+                {{-- <li class="nav-item">
+                <x-_locale lang="es" />
+            </li> --}}
+            </div>
         </div>
     </div>
 </nav>

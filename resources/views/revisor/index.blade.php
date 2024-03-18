@@ -11,7 +11,13 @@
             @if ($announcement_to_check)
                 <div class="col-12 col-md-4 my-3 mx-auto d-flex justify-content-evenly">
                     <div class="card" style="width: 18rem;">
-                        <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                        @if ($announcement_to_check->images)
+                            @foreach ($announcement_to_check->images as $image)
+                                <img src="{{ Storage::url($image->path) }}" class="img-fluid p-3 rounded" alt="">
+                            @endforeach
+                        @else
+                            <img src="https://picsum.photos/300" class="img-fluid p-3 rounded" alt="">
+                        @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $announcement_to_check->name }}</h5>
                             <p class="card-text">{{ $announcement_to_check->description }}</p>
@@ -39,14 +45,14 @@
                         </form>
                     </div>
                 </div>
-                @elseif ($announcement_to_undo)
-            
-            
+            @elseif ($announcement_to_undo)
+            <div class="vh-50">
                 <form action="{{ route('revisor.undo', ['announcement' => $announcement_to_undo]) }}" method="POST">
                     @csrf
                     @method('PATCH')
                     <button type="submit" class="btn btn-danger shadow">Annulla operazione</button>
                 </form>
+            </div>
             @endif
             <div class="d-flex justify-content-center">
                 {{-- {{ $announcements->links() }} --}}
@@ -55,3 +61,5 @@
     </div>
 
 </x-layout>
+
+
