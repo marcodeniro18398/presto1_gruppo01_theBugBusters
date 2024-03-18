@@ -1,5 +1,6 @@
 <?php
 return [
+    'latestAnnoucement'=>'Ultimos anuncios insertados',
     'allAnnouncements' => 'Aquí están nuestros anuncios!',
     // Traduzioni category.show
     'allCategory'=>'Todas las categorias',
@@ -19,7 +20,7 @@ return [
     'Sport'=>'Deporte',
     'Orologi'=>'Relojes',
     'Moda'=>'Moda',
-    'Strumenti Musicali'=>'Instrumentos Musicales',
+    'Strumenti musicali'=>'Instrumentos Musicales',
     'Consulenze'=>'Consultoria',
     // Lavora con noi
     'workwithus'=>'Trabaja con nosotros',

@@ -19,6 +19,7 @@ use App\Http\Controllers\AnnouncementController;
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
 //* rotte categorie
+Route::get('/categoria', [PublicController::class, 'categoryAll'])->name('categoryAll');
 Route::get('/categoria/{category}', [PublicController::class, 'categoryShow'])->name('categoryShow');
 
 //* Rotte degli annunci

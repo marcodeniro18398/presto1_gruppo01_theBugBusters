@@ -8,8 +8,9 @@
         </div>
         <div class="row justify-content-center ">
             @forelse ($announcements as $announcement)
-            <div class="col-12 col-md-3 my-3">
-                    <div class="card rounded-5" style="width: 18rem;">
+            <div class="col-12 col-md-3 my-5">
+            <x-card :announcement="$announcement"></x-card>
+                    {{-- <div class="card rounded-5" style="width: 18rem;">
                         <img src="{{ !$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200' }}"
                             class="rounded-top-5" alt="...">
                         <div class="card-body rounded-bottom-5 bg-grey color-champagnePink">
@@ -23,7 +24,7 @@
                             <p class="card-text pt-3 fst-italic">{{__('ui.publication')}} {{ $announcement->created_at->format('d/m/Y') }} {{__('ui.from')}}
                                 {{ $announcement->user->name ?? '' }}</p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             @empty
                 <div class="col-12 col-md-8 vh-50 pt-5">

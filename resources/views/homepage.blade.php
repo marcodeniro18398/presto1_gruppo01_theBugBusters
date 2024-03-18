@@ -3,12 +3,12 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <h5 class="py-5 text-uppercase font-primary">{{ __('ui.allAnnouncements') }}</h5>
+                <h5 class="py-5 text-uppercase font-primary">{{ __('ui.latestAnnoucement') }}</h5>
             </div>
         </div>
-        <div class="row justify-content-center ">
+        <div class="row justify-content-center">
             @foreach ($announcements as $announcement)
-                <div class="col-12 col-md-4 my-3 d-flex justify-content-around">
+                <div class="col-12 col-md-4 my-5 d-flex justify-content-around">
                     {{-- <div class="card rounded-5" style="width: 18rem;">
                         <img src="{{ !$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(200, 150) : 'https://picsum.photos/200' }}"
                             class="rounded-top-5" alt="...">

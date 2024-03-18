@@ -7,8 +7,8 @@
         </div>
         <div class="row justify-content-center">
             @forelse ($announcements as $announcement)
-                <div class="col-12 col-md-4 my-3 mx-auto d-flex justify-content-evenly">
-                    <div class="card rounded-5" style="width: 18rem;">
+                <div class="col-12 col-md-4 my-5 mx-auto d-flex justify-content-evenly">
+                    {{-- <div class="card rounded-5" style="width: 18rem;">
                         <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200'}}" class="rounded-top-5" alt="...">
                         <div class="card-body rounded-bottom-5 bg-grey color-champagnePink">
                             <h5 class="card-title">{{ $announcement->name }}</h5>
@@ -20,12 +20,13 @@
                                 class="btn btn-primary ">{{__('ui.category')}} {{ __('ui.'.$announcement->category->name) }}</a>
                             <p class="card-text pt-3 fst-italic">{{__('ui.publication')}} {{ $announcement->created_at->format('d/m/Y') }} da: {{ $announcement->user->name ?? '' }}</p>
                         </div>
-                    </div>
+                    </div> --}}
+                    <x-card :announcement="$announcement"></x-card>
                 </div>
             @empty
                 <div class="col-12">
                     <div class="alert alert-warning text-center">
-                        <p class="lead">{{__('ui.nothingAnnouncement')}}</p>
+                        <p class="lead">{{__('ui.NothingAnnouncements')}}</p>
                     </div>
                 </div>
             @endforelse

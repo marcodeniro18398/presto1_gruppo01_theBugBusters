@@ -63,7 +63,7 @@
                 <p class="card-text">{{ $announcement->price }}</p>
                 <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
                     class="btn btn-primary  my-2">{{__('ui.category')}} {{ __('ui.'.$announcement->category->name) }}</a>
-                <p class="fst-italic">{{__('ui.publicated')}} {{ $announcement->created_at->format('d/m/Y') }}</p>
+                <p class="fst-italic">{{__('ui.publication')}} {{ $announcement->created_at->format('d/m/Y') }}</p>
             </div>
         </div>
     </div>
