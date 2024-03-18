@@ -26,13 +26,13 @@
         <p class="card-text">{{ $announcement->price }}</p>
         <!-- Button -->
         <a href="{{ route('announcements.show', compact('announcement')) }}"
-            class="btn mx-1 my-1 btn-custom2">Dettagli</a>
+            class="btn mx-1 my-1 btn-custom2">{{__('ui.details')}}</a>
 
     </div>
 
     <!-- Card footer -->
     <div class="card-footer text-center card-footer-custom">
-        Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }} da: {{ $announcement->user->name ?? '' }}
+        {{__('ui.publication')}} {{ $announcement->created_at->format('d/m/Y') }} {{__('ui.from')}} {{ $announcement->user->name ?? '' }}
     </div>
 
 </div>

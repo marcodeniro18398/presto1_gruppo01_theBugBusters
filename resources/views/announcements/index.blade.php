@@ -2,7 +2,7 @@
     <div class="container-fluid margin-title">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <h2 class=" text-uppercase font-primary pt-4 pb-5">Tutte le categorie!</h2>
+                <h2 class=" text-uppercase font-primary pt-4 pb-5">{{__('ui.allAnnouncements')}}</h2>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -15,17 +15,17 @@
                             <p class="card-text">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}</p>
                             <a href="{{ route('announcements.show', compact('announcement')) }}"
-                                class="btn btn-primary ">dettagli!</a>
+                                class="btn btn-primary ">{{__('ui.details')}}</a>
                             <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                                class="btn btn-primary ">Categoria:{{ $announcement->category->name }}</a>
-                            <p class="card-text pt-3 fst-italic">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }} da: {{ $announcement->user->name ?? '' }}</p>
+                                class="btn btn-primary ">{{__('ui.category')}}{{ $announcement->category->name }}</a>
+                            <p class="card-text pt-3 fst-italic">{{__('ui.publication')}} {{ $announcement->created_at->format('d/m/Y') }} da: {{ $announcement->user->name ?? '' }}</p>
                         </div>
                     </div>
                 </div>
             @empty
                 <div class="col-12">
                     <div class="alert alert-warning text-center">
-                        <p class="lead">Non ci sono annunci per questa ricerca!</p>
+                        <p class="lead">{{__('ui.nothingAnnouncement')}}</p>
                     </div>
                 </div>
             @endforelse

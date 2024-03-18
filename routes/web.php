@@ -31,16 +31,10 @@ Route::get('/revisore/home', [RevisorController::class, 'index'])->middleware('i
 Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->middleware('isRevisor')->name('revisor.accept_announcement');
 Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.reject_announcement');
 Route::patch('/annuncio/tornareindietro/{announcement}',[RevisorController::class, 'undoAnnouncement'])->middleware('isRevisor')->name('revisor.undo');
-<<<<<<< HEAD
-//* rotte del footer
-Route::get('/lavora-con-noi', [PublicController::class, 'workWithUs'])->name('work-with-us');
-Route::post('/lavora-con-noi/submit', [PublicController::class, 'workWithUsSubmit'])->name('work-with-us.submit');
-=======
 
 //* rotte del footer
 Route::get('/lavora-con-noi', [PublicController::class, 'workWithUs'])->middleware('auth')->name('work-with-us');
 Route::post('/lavora-con-noi/submit', [PublicController::class, 'workWithUsSubmit'])->middleware('auth')->name('work-with-us.submit');
->>>>>>> 2f036d75e376ad1de99d798e1818fff1455b5edb
 Route::post('/richiesta/revisore/', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('revisor.become');
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('revisor.make');
 

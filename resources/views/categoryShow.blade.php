@@ -2,12 +2,13 @@
     <div class="container-fluid margin-title">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <h2 class="text-uppercase font-primary pt-4 pb-5">Tutte le categorie!</h2>
+                <h2 class="text-uppercase font-primary pt-4 pb-5">{{__('ui.allAnnouncementCategory')}} {{$category->name }}</h2>
             </div>
+            
         </div>
         <div class="row justify-content-center ">
             @forelse ($announcements as $announcement)
-                <div class="col-12 col-md-3 my-3">
+            <div class="col-12 col-md-3 my-3">
                     <div class="card rounded-5" style="width: 18rem;">
                         <img src="{{ !$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200' }}"
                             class="rounded-top-5" alt="...">
@@ -16,18 +17,18 @@
                             <p class="card-text">{{ $announcement->description }}</p>
                             <p class="card-text">{{ $announcement->price }}</p>
                             <a href="{{ route('announcements.show', compact('announcement')) }}"
-                                class="btn btn-custom2">dettagli!</a>
+                                class="btn btn-custom2">{{__('ui.details')}}</a>
                             <p href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                                class="btn btn-custom2 mb-0">Categoria:{{ $announcement->category->name }}</p>
-                            <p class="card-text pt-3 fst-italic">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }} da:
+                                class="btn btn-custom2 mb-0">{{__('ui.category')}} {{ $announcement->category->name }}</p>
+                            <p class="card-text pt-3 fst-italic">{{__('ui.publication')}} {{ $announcement->created_at->format('d/m/Y') }} {{__('ui.from')}}
                                 {{ $announcement->user->name ?? '' }}</p>
                         </div>
                     </div>
                 </div>
             @empty
                 <div class="col-12 col-md-8 vh-50 pt-5">
-                    <p class="pt-5">Non sono presenti annunci per questa categoria!</p>
-                    <p>Pubblicane uno: <a class="mx-2 btn btn-custom" href="{{ route('announcements.create') }}">Nuovo annuncio</a></p>
+                    <p class="pt-5">{{__('ui.NothingAnnouncements')}}</p>
+                    <p>{{__('ui.publicated')}} <a class="mx-2 btn btn-custom color-grey" href="{{ route('announcements.create') }}">{{__('ui.newAnnouncement')}}</a></p>
                 </div>
             @endforelse
         </div>

@@ -4,7 +4,7 @@
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-custom-footer">
         <!-- Left -->
         <div class="me-5 d-none d-lg-block">
-            <span>Collegati ai nostri progetti:</span>
+            <span>{{__('ui.connection')}}</span>
         </div>
         <!-- Left -->
 
@@ -45,7 +45,7 @@
                         <i class="fas fa-gem me-3"></i>TheBug Busters
                     </h6>
                     <p>
-                        Siamo il team di sviluppatori che ha progettato questo sito di compravendita online!
+                        {{__('ui.descriptionTeam')}}
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -54,10 +54,10 @@
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
                     <!-- Links -->
                     <h6 class="text-uppercase fs-3 fw-bold mb-4">
-                        LINK UTILI
+                        {{__('ui.link')}}
                     </h6>
                     <p>
-                        <a href="{{route('work-with-us')}}" class="text-reset fs-4">Lavora con noi!</a>
+                        <a href="{{route('work-with-us')}}" class="text-reset fs-4">{{__('ui.workwithus')}}</a>
                     </p>
                     {{-- <p>
                         <a href="#!" class="text-reset">React</a>

@@ -2,7 +2,7 @@
     <div class="container py-4 margin-title">
         <div class="row pt-3 pb-4 justify-content-center">
             <div class="col-12 col-md-6">
-                <h2 class="text-uppercase font-primary">Annuncio {{ $announcement->name }}</h2>
+                <h2 class="text-uppercase font-primary">{{__('ui.announcement')}} {{ $announcement->name }}</h2>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -62,8 +62,8 @@
                 <p class="card-text">{{ $announcement->description }}</p>
                 <p class="card-text">{{ $announcement->price }}</p>
                 <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                    class="btn btn-primary  my-2">Categoria: {{ $announcement->category->name }}</a>
-                <p class="fst-italic">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}</p>
+                    class="btn btn-primary  my-2">{{__('ui.category')}} {{ $announcement->category->name }}</a>
+                <p class="fst-italic">{{__('ui.publicated')}} {{ $announcement->created_at->format('d/m/Y') }}</p>
             </div>
         </div>
     </div>

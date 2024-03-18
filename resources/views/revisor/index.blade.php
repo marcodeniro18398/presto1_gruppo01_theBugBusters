@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <h1>{{ $announcement_to_check ? 'Ecco l\' annuncio da revisionare' : 'Non ci sono annunci da revisionare' }}
+                <h1>{{ $announcement_to_check ? __('ui.announcementRevisioned') : __('ui.nothingAnnouncementRevisioned') }}
                 </h1>
 
             </div>
@@ -34,14 +34,14 @@
                             method="POST">
                             @csrf
                             @method('PATCH')
-                            <button type="submit" class="btn btn-success shadow">Accetta!</button>
+                            <button type="submit" class="btn btn-success shadow">{{__('ui.accept')}}</button>
                         </form>
                         <form
                             action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
                             method="POST">
                             @csrf
                             @method('PATCH')
-                            <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
+                            <button type="submit" class="btn btn-danger shadow">{{__('ui.refuse')}}</button>
                         </form>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                 <form action="{{ route('revisor.undo', ['announcement' => $announcement_to_undo]) }}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-danger shadow">Annulla operazione</button>
+                    <button type="submit" class="btn btn-danger shadow">{{__('ui.reset')}}</button>
                 </form>
             </div>
             @endif

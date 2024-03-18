@@ -11,17 +11,17 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Homepage</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('announcements.index') }}">Annunci</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('announcements.index') }}">{{__('ui.announcement')}}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Categorie
+                        {{__('ui.category')}}
                     </a>
                     <ul class="dropdown-menu">
                         @foreach ($categories as $category)
                             <li><a class="dropdown-item"
-                                    href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
+                                    href="{{ route('categoryShow', compact('category')) }}">{{ __('ui.'.$category->name) }}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -31,11 +31,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Zona Utente
+                            {{__('ui.userZone')}}
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                            <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                            <li><a class="dropdown-item" href="{{ route('register') }}">{{__('ui.registration')}}</a></li>
                             {{-- <li>
                                 <hr class="dropdown-divider">
                             </li> --}}
@@ -47,7 +47,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Ciao, {{ Auth::user()->name }}
+                            {{__('ui.hi')}}, {{ Auth::user()->name }}
                             @if (Auth::user()->is_revisor)
                                 <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger ms-1">
                                     {{ App\Models\Announcement::toBeRevisionedCount() }}
@@ -59,11 +59,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Profilo</a></li>
-                            <li><a class="dropdown-item" href="{{ route('announcements.create') }}">Inserisci un
-                                    annuncio</a>
+                            <li><a class="dropdown-item" href="{{ route('announcements.create') }}">{{__('ui.newAnnouncement')}}
+                                </a>
                             </li>
                             @if (Auth::user()->is_revisor)
-                                <li><a class="dropdown-item " href="{{ route('revisor.index') }}">Zona Revisore
+                                <li><a class="dropdown-item " href="{{ route('revisor.index') }}">{{__('ui.revisorZone')}}
 
                                     </a>
                                 </li>
@@ -89,7 +89,7 @@
                                     method="GET">
                                     <div class="input-group">
                                         <input class="form-control input-group-text text-start bg-champagnePink color-grey" type="search"
-                                            placeholder="Cosa vuoi cercare?" aria-label="Search" name="searched">
+                                            placeholder="{{__('ui.search')}}" aria-label="Search" name="searched">
                                         <span class="input-group-text bg-grey" id="basic-addon1">
                                             <button class="btn text-center pb-0" type="submit">
                                                 <i class="bi bi-send color-champagnePink"></i>
@@ -109,11 +109,11 @@
                     <li class="nav-item">
                         <x-_locale lang="en" />
                     </li>
+                    <li class="nav-item">
+                        <x-_locale lang="es" />
+                    </li>
                 </ul>
                 {{-- ???????????   TERZA LINGUA?????????????????   --}}
-                {{-- <li class="nav-item">
-                <x-_locale lang="es" />
-            </li> --}}
             </div>
         </div>
     </div>
