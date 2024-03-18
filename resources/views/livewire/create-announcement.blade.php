@@ -35,7 +35,7 @@
                 <select id="category" class="form-select" wire:model.defer="category">
                     <option value="">{{__('ui.selectionCategory')}}</option>
                     @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        <option value="{{ $category->id }}">{{ __('ui.'.$category->name) }}</option>
                     @endforeach
                 </select>
                 <div class="mb-3 py-2">

@@ -17,7 +17,7 @@
                             <a href="{{ route('announcements.show', compact('announcement')) }}"
                                 class="btn btn-primary ">{{__('ui.details')}}</a>
                             <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                                class="btn btn-primary ">{{__('ui.category')}}{{ $announcement->category->name }}</a>
+                                class="btn btn-primary ">{{__('ui.category')}} {{ __('ui.'.$announcement->category->name) }}</a>
                             <p class="card-text pt-3 fst-italic">{{__('ui.publication')}} {{ $announcement->created_at->format('d/m/Y') }} da: {{ $announcement->user->name ?? '' }}</p>
                         </div>
                     </div>

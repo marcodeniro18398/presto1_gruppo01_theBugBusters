@@ -17,7 +17,7 @@
         <!-- Label -->
         <h5 class="color-champagnePink pb-2 pt-1 text-center border-category"><i class="bi bi-shop-window"></i><a
                 href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                class=""> {{ $announcement->category->name }}</a></h5>
+                class=""> {{ __('ui.'.$announcement->category->name) }}</a></h5>
         <!-- Title -->
         <h4 class="font-weight-bold card-title mt-3">{{ $announcement->name }}</h4>
         <!-- Text -->

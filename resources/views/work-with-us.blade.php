@@ -30,7 +30,7 @@
                         @enderror
                     </div>
                     <div class="py-2 mb-3">
-                        <label for="message" class="form-label">{{__('us.insertyourmessage')}}</label>
+                        <label for="message" class="form-label">{{__('ui.insertyourmessage')}}</label>
                         <textarea wire:model.live.blur="message" id="message" class="form-control" cols="30" rows="10">
                         </textarea>
                         @error('message')

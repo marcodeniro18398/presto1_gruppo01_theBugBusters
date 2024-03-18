@@ -2,7 +2,7 @@
     <div class="container-fluid margin-title">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <h2 class="text-uppercase font-primary pt-4 pb-5">{{__('ui.allAnnouncementCategory')}} {{$category->name }}</h2>
+                <h2 class="text-uppercase font-primary pt-4 pb-5">{{__('ui.allAnnouncementCategory')}} {{ __('ui.'.$category->name) }}</h2>
             </div>
             
         </div>
@@ -19,7 +19,7 @@
                             <a href="{{ route('announcements.show', compact('announcement')) }}"
                                 class="btn btn-custom2">{{__('ui.details')}}</a>
                             <p href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                                class="btn btn-custom2 mb-0">{{__('ui.category')}} {{ $announcement->category->name }}</p>
+                                class="btn btn-custom2 mb-0">{{__('ui.category')}} {{ __('ui.'.$announcement->category->name) }}</p>
                             <p class="card-text pt-3 fst-italic">{{__('ui.publication')}} {{ $announcement->created_at->format('d/m/Y') }} {{__('ui.from')}}
                                 {{ $announcement->user->name ?? '' }}</p>
                         </div>
