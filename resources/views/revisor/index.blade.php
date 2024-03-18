@@ -46,7 +46,7 @@
                     </div>
                 </div>
             @elseif ($announcement_to_undo)
-            <div class="vh-50">
+            <div class="vh-50 d-flex justify-content-center align-items-end">
                 <form action="{{ route('revisor.undo', ['announcement' => $announcement_to_undo]) }}" method="POST">
                     @csrf
                     @method('PATCH')
@@ -61,5 +61,3 @@
     </div>
 
 </x-layout>
-
-

@@ -15,7 +15,7 @@
                     @csrf
                     <div class="py-2 mb-3">
                         <label for="email" class="form-label">{{__('ui.insertyourmail')}}</label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
+                        <input type="email" class="form-control shadow-input @error('email') is-invalid @enderror" id="email"
                             name="email" placeholder="es.: mariorossi@email.com">
 
                         @error('email')
@@ -24,7 +24,7 @@
                     </div>
                     <div class="py-2 mb-3">
                         <label for="password" class="form-label">{{__('ui.insertPass')}}</label>
-                        <input type="password" class="form-control @error('password') is-invalid @enderror"
+                        <input type="password" class="form-control shadow-input @error('password') is-invalid @enderror"
                             id="password" name="password" placeholder="......">
                         @error('password')
                             <div class="alert alert-danger">{{ $message }}</div>

@@ -92,7 +92,7 @@
                                     method="GET">
                                     <div class="input-group">
                                         <input
-                                            class="form-control input-group-text text-start bg-champagnePink color-grey"
+                                            class="form-control input-group-text text-start bg-champagnePink color-grey shadow-input"
                                             type="search" placeholder="{{ __('ui.search') }}" aria-label="Search"
                                             name="searched">
                                         <span class="input-group-text bg-grey" id="basic-addon1">
