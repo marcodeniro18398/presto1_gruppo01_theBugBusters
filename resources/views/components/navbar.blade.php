@@ -6,7 +6,7 @@
             <i class="bi bi-list fs-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-evenly">
+            <ul class="navbar-nav translate-nav me-auto mb-2 mb-lg-0 w-100 justify-content-evenly">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Homepage</a>
                 </li>
@@ -50,12 +50,21 @@
                             aria-expanded="false">
                             {{ __('ui.hi') }}, {{ Auth::user()->name }}
                             @if (Auth::user()->is_revisor)
+                                @if (App\Models\Announcement::toBeRevisionedCount() == 0)
+                                <span class=" top-0 start-100 translate-middle badge rounded-pill bg-success ms-1">
+                                    {{ App\Models\Announcement::toBeRevisionedCount() }}
+                                    <span class="visually-hidden">
+                                        UnreadMessage
+                                    </span>
+                                </span>
+                                @else
                                 <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger ms-1">
                                     {{ App\Models\Announcement::toBeRevisionedCount() }}
                                     <span class="visually-hidden">
                                         UnreadMessage
                                     </span>
                                 </span>
+                                @endif
                             @endif
                         </a>
                         <ul class="dropdown-menu">
