@@ -29,7 +29,7 @@
             @empty
                 <div class="col-12 col-md-8 vh-50 pt-5">
                     <p class="pt-5">{{__('ui.NothingAnnouncements')}}</p>
-                    <p>{{__('ui.publicated')}} <a class="mx-2 btn btn-custom color-grey" href="{{ route('announcements.create') }}">{{__('ui.newAnnouncement')}}</a></p>
+                    <p>{{__('ui.publicated')}} <a class="mx-2 btn btn-custom1 color-grey" href="{{ route('announcements.create') }}">{{__('ui.newAnnouncement')}}</a></p>
                 </div>
             @endforelse
         </div>
