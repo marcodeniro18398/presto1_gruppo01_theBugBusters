@@ -17,8 +17,9 @@
     --marco1: #96705B;
     --marco2: #AB8476;
 
-    --font-primary: "Josefin Sans", sans-serif;
-    --font-secondary: "PT Sans", sans-serif;
+--font-primary: "Josefin Sans", sans-serif;
+--font-secondary: "PT Sans", sans-serif;
+--font-title:"Amita", serif;
 }
 
 .color-grey {
@@ -90,7 +91,9 @@ form select {
 .font-primary {
     font-family: var(--font-primary);
 }
-
+.font-title{
+    font-family: var(--font-title);
+}
 .dropdown-item:focus {
     color: var(--grey) !important;
     background-color: var(--champagne-pink) !important;
@@ -301,6 +304,12 @@ a {
     display: flex;
 }
 
+.title{
+    font-size: 100px;
+    text-shadow:6px 3px 4px  var(--champagne-pink);
+   
+}
+
 
 
 
@@ -323,5 +332,13 @@ a {
     .translate-nav {
         translate: 0px 5px;
     }
+
+    .title{
+        font-size: 70px;
+    
+        text-shadow: 7px 3px 4px  var(--champagne-pink);
+        
+    }
+    
 
 }
