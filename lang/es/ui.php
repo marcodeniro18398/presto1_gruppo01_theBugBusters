@@ -39,6 +39,7 @@ return [
     'description'=>'Descriptiòn:',
     'price'=>'Precio:',
     'selectionCategory'=>'Seleccione una categorìa:',
+    'photoPreview' => 'Vista previa de la foto:',
     'delete'=>'Borrar',
     // Navbar
     'announcement'=>'Anuncios',
