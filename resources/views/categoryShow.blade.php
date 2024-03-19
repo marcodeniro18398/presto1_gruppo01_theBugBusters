@@ -2,14 +2,15 @@
     <div class="container-fluid margin-title">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <h2 class="text-uppercase font-primary pt-4 pb-5">{{__('ui.allAnnouncementCategory')}} {{ __('ui.'.$category->name) }}</h2>
+                <h2 class="text-uppercase font-primary pt-4 pb-5">{{ __('ui.allAnnouncementCategory') }}
+                    {{ __('ui.' . $category->name) }}</h2>
             </div>
-            
+
         </div>
         <div class="row justify-content-center ">
             @forelse ($announcements as $announcement)
-            <div class="col-12 col-md-3 my-5">
-            <x-card :announcement="$announcement"></x-card>
+                <div class="col-12 col-md-3 my-5">
+                    <x-card :announcement="$announcement"></x-card>
                     {{-- <div class="card rounded-5" style="width: 18rem;">
                         <img src="{{ !$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200' }}"
                             class="rounded-top-5" alt="...">
@@ -28,8 +29,9 @@
                 </div>
             @empty
                 <div class="col-12 col-md-8 vh-50 pt-5">
-                    <p class="pt-5">{{__('ui.NothingAnnouncements')}}</p>
-                    <p>{{__('ui.publicated')}} <a class="mx-2 btn btn-custom1 color-grey" href="{{ route('announcements.create') }}">{{__('ui.newAnnouncement')}}</a></p>
+                    <p class="pt-5">{{ __('ui.NothingAnnouncements') }}</p>
+                    <p>{{ __('ui.publicated') }} <a class="mx-2 btn btn-custom1 color-grey"
+                            href="{{ route('announcements.create') }}">{{ __('ui.newAnnouncement') }}</a></p>
                 </div>
             @endforelse
         </div>
