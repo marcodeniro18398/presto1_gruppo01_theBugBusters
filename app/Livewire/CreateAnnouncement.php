@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire;
+use App\Jobs\GoogleVisionSafeSearch;
 use Livewire\Component;
 use Spatie\Image\Image;
 use App\Models\Category;
@@ -15,15 +16,15 @@ use Illuminate\Support\Facades\File;
 class CreateAnnouncement extends Component
 {
     use WithFileUploads;
-    
-    
+
+
     public $images = [];
     public $temporary_images;
     public $name;
     public $description;
-    public $price;    
+    public $price;
     public $category;
-    
+
     protected $rules = [
         'name' => 'required|min:5',
         'category' => 'required',
@@ -32,7 +33,7 @@ class CreateAnnouncement extends Component
         'images.' => 'image|max:1024',
         'temporary_images.' => 'image|max:1024'
     ];
-    
+
     protected $messages = [
         'required' => 'Il campo è obbligatorio',
         'min' => 'Il campo è troppo corto',
@@ -41,14 +42,14 @@ class CreateAnnouncement extends Component
         'images.image' => 'I file devono essere immagini',
         'images.max' => 'L\'immagine dev\'essere massima 5mb'
     ];
-    
-    
-    
+
+
+
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
     }
-    
+
     public function updatedTemporaryImages(){
         if($this->validate([
             'temporary_images.*'=>'image|max:1024'
@@ -58,47 +59,47 @@ class CreateAnnouncement extends Component
                 }
             }
         }
-        
+
         public function removeImage($key){
             if (in_array($key, array_keys($this->images))){
                 unset($this->images[$key]);
             }
         }
-        
+
         public $announcement;
         public $image;
-        
+
         public function store()
         {
-            
+
             $this->validate();
-            
+
             $this->announcement = Category::find($this->category)->announcements()->create([
-                
+
                 'name' => $this->name,
                 'description' => $this->description,
                 'price' => $this->price,]);
-                
+
                 if(count($this->images)){
                     foreach ($this->images as $image){
                         // $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
                         $newFileName="announcements/{$this->announcement->id}";
                         $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName, 'public')]);
                         dispatch(new ResizeImage($newImage->path, 200, 150));
+                        dispatch(new GoogleVisionSafeSearch($newImage->id));
                     }
                     File::deleteDirectory(storage_path('/app/livewire-tmp'));
                 }
-                
+
                 $this->announcement->user()->associate(Auth::user());
                 $this->announcement->save();
-                
+
                 session()->flash('status', 'Annuncio caricato correttamente, sarà pubblicato dopo la revisione!');
                 $this->reset();
             }
-            
+
             public function render()
             {
                 return view('livewire.create-announcement');
             }
         }
-        
