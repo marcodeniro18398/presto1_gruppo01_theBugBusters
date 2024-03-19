@@ -94,7 +94,7 @@ form select {
 .font-title{
     font-family: var(--font-title);
 }
-.dropdown-item:focus {
+.dropdown-item:hover {
     color: var(--grey) !important;
     background-color: var(--champagne-pink) !important;
 }
@@ -280,10 +280,10 @@ a {
     width: 100%;
 }
 
-.card:hover {
+/* .card:hover {
     color: rgb(88 199 250 / 100%);
     transition: color 1s;
-}
+} */
 
 .sfondo {
     position: absolute;

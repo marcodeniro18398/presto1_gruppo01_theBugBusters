@@ -51,19 +51,19 @@
                             {{ __('ui.hi') }}, {{ Auth::user()->name }}
                             @if (Auth::user()->is_revisor)
                                 @if (App\Models\Announcement::toBeRevisionedCount() == 0)
-                                <span class=" top-0 start-100 translate-middle badge rounded-pill bg-success ms-1">
-                                    {{ App\Models\Announcement::toBeRevisionedCount() }}
-                                    <span class="visually-hidden">
-                                        UnreadMessage
+                                    <span class=" top-0 start-100 translate-middle badge rounded-pill bg-success ms-1">
+                                        {{ App\Models\Announcement::toBeRevisionedCount() }}
+                                        <span class="visually-hidden">
+                                            UnreadMessage
+                                        </span>
                                     </span>
-                                </span>
                                 @else
-                                <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger ms-1">
-                                    {{ App\Models\Announcement::toBeRevisionedCount() }}
-                                    <span class="visually-hidden">
-                                        UnreadMessage
+                                    <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger ms-1">
+                                        {{ App\Models\Announcement::toBeRevisionedCount() }}
+                                        <span class="visually-hidden">
+                                            UnreadMessage
+                                        </span>
                                     </span>
-                                </span>
                                 @endif
                             @endif
                         </a>
