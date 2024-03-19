@@ -15,11 +15,9 @@
                         
                         <img class="img-fluid w-100 img-hover" src="https://picsum.photos/900" alt="...">
                         <div class="portfolio-box-caption">
-                            
                             {{-- <h4 >{{ __('ui.'.$category->name) }}</h4> --}}
                         </div>
                     </div>
-                    
                 </a>
             </div>
             @endforeach
