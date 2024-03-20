@@ -68,7 +68,7 @@
                             @endif
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">{{ __('ui.profilo') }}</a></li>
+                            {{-- <li><a class="dropdown-item" href="#">{{ __('ui.profilo') }}</a></li> --}}
                             <li><a class="dropdown-item"
                                     href="{{ route('announcements.create') }}">{{ __('ui.newAnnouncement') }}
                                 </a>

@@ -1,20 +1,29 @@
 <x-layout>
     <div class="container-fluid margin-title">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 text-center">
-                <h1>{{ $announcement_to_check ? __('ui.announcementRevisioned') : __('ui.nothingAnnouncementRevisioned') }}
-                </h1>
-
+        @if (!$announcement_to_check)
+            <div class="row justify-content-center align-items-center vh-70 w-100">
+                <div class="col-12 col-md-6 text-center">
+                    <h2 class="subtitle">
+                        {{ __('ui.nothingAnnouncementRevisioned') }}
+                    </h2>
+                </div>
             </div>
-        </div>
+        @else
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 text-center">
+                    <h2 class="subtitle">
+                        {{__('ui.announcementRevisioned') }}
+                    </h2>
+                </div>
+            </div>
+        @endif
         <div class="row w-100 justify-content-center">
             @if ($announcement_to_check)
-                <div class="  col-12 col-md-12 my-3 d-flex justify-content-evenly">
+                <div class="  col-12 col-md-8 my-3 d-flex justify-content-evenly">
                     <div class="card">
                         @if ($announcement_to_check->images)
                             @foreach ($announcement_to_check->images as $image)
-                                <img src="{{ !$announcement_to_check->images()->get()->isEmpty() ? $announcement_to_check->images()->first()->getUrl(400, 300) : 'https://picsum.photos/200' }}"
-                                    class="img-fluid p-3 rounded" alt="">
+                                <img src="{{ $image->getUrl(400, 300) }}" class="img-fluid p-3 rounded" alt="">
                                 <div class=" col-md-12 border-end">
                                     <h5 class="tc-accent mt-3">
                                         Tags:
@@ -71,7 +80,7 @@
                     </div>
                 </div>
             @elseif ($announcement_to_undo)
-                <div class="vh-50 d-flex justify-content-center align-items-end">
+                <div class="d-flex justify-content-center align-items-end w-100">
                     <form action="{{ route('revisor.undo', ['announcement' => $announcement_to_undo]) }}"
                         method="POST">
                         @csrf

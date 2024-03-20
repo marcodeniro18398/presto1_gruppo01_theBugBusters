@@ -21,7 +21,7 @@
         <!-- Title -->
         <h4 class="font-weight-bold card-title mt-3">{{ $announcement->name }}</h4>
         <!-- Text -->
-        <p class="card-text">{{ $announcement->description }}</p>
+        <p class="card-text text-truncate">{{ $announcement->description }}</p>
         <!-- Price -->
         <p class="card-text">{{ $announcement->price }}</p>
         <!-- Button -->

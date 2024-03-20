@@ -2,7 +2,7 @@
     <div class="container-fluid margin-title">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <h2 class=" text-uppercase font-primary pt-4 pb-5">{{__('ui.allAnnouncements')}}</h2>
+                <h2 class=" text-uppercase font-primary pt-4 pb-5 subtitle">{{__('ui.allAnnouncements')}}</h2>
             </div>
         </div>
         <div class="row justify-content-center">

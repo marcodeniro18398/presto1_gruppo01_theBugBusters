@@ -21,7 +21,7 @@
                             @foreach ($announcement->images as $image)
 
                                 <div class="carousel-item @if ($loop->first) active @endif">
-                                    <img src="{{ $announcement->images()->first()->getUrl(400, 300) }}"
+                                    <img src="{{ $image->getUrl(400, 300) }}"
                                         class="img-fluid p-3 rounded" alt="">
                                 </div>
                             @endforeach
@@ -85,10 +85,9 @@ data-bs-slide="next">
             <p class="card-text">{{ $announcement->description }}</p>
             <p class="card-text">{{ $announcement->price }}</p>
             <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
-                class="my-2 text-grey">{{ __('ui.category') }}
+                class="my-2 btn btn-custom1">{{ __('ui.category') }}
                 {{ __('ui.' . $announcement->category->name) }}</a>
-            <p class="fst-italic">{{ __('ui.publication') }}
-                {{ $announcement->created_at->format('d/m/Y') }}</p>
+            <p class="fst-italic">{{__('ui.publication')}} {{ $announcement->created_at->format('d/m/Y') }} {{__('ui.from')}} {{ $announcement->user->name ?? '' }}</p>
         </div>
     </div>
     </div>

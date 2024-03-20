@@ -25,7 +25,7 @@
             <a href="" class="me-4 text-reset">
                 <i class="bi bi-linkedin"></i>
             </a> --}}
-            <a href="https://github.com/Hackademy-134/presto1_gruppo01_theBugBusters" class="me-4 text-reset">
+            <a target="_blank" href="https://github.com/Hackademy-134/presto1_gruppo01_theBugBusters" class="me-4 text-reset">
                 <i class="bi bi-github"></i>
             </a>
         </div>
@@ -66,10 +66,10 @@
                         <a href="#!" class="text-reset">Vue</a>
                     </p> --}}
                     <p>
-                        <a href="https://laravel.com/" class="text-reset">Laravel</a>
+                        <a target="_blank" href="https://laravel.com/" class="text-reset">Laravel</a>
                     </p>
                     <p>
-                        <a href="https://laravel.com/docs/10.x" class="text-reset">Laravel (Documentazione v. 10.x)</a>
+                        <a target="_blank" href="https://laravel.com/docs/10.x" class="text-reset">Laravel (Documentazione v. 10.x)</a>
                     </p>
                 </div>
 
