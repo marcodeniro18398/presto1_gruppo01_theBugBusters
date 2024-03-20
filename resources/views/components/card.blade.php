@@ -4,7 +4,7 @@
     <!-- Card image -->
     <div class="view view-cascade overlay card-custom">
         <img class="card-img-top img-card-custom"
-            src="{{ !$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(200, 150) : 'https://picsum.photos/200' }}"
+            src="{{ !$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(400, 300) : 'https://picsum.photos/200' }}"
             alt="Card image">
         <a>
             <div class="mask rgba-white-slight waves-effect"></div>

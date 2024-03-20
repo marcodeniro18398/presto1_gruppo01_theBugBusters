@@ -28,13 +28,18 @@ class ResizeImage implements ShouldQueue
         $this->h = $h;
         
     }
-
+    
     public function handle(): void
     {
         $w = $this->w;
         $h = $this->h;
         $srcPath = storage_path() . '/app/public/' . $this->path . '/' . $this->fileName;
         $destPath = storage_path() . '/app/public/' . $this->path . "/crop_{$w}x{$h}_" . $this->fileName;
-        $croppedImage = Image::load($srcPath)->crop(Manipulations::CROP_CENTER, $w, $h)->save($destPath);
+        $croppedImage = Image::load($srcPath)->crop(Manipulations::CROP_CENTER, $w, $h)
+        ->watermark(base_path('resources/img/logo.png'))
+        ->watermarkPosition('bottom-right')
+        ->watermarkHeight(20, Manipulations::UNIT_PIXELS)
+        ->watermarkWidth(40, Manipulations::UNIT_PIXELS)
+        ->save($destPath);
     }
 }
