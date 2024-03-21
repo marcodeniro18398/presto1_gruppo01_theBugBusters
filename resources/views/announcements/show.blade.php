@@ -5,7 +5,7 @@
                 <h2 class="text-uppercase font-primary">{{ __('ui.announcement') }} {{ $announcement->name }}</h2>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center w-100">
             <div class="col-10 col-md-6 justify-content-center d-flex">
                 <div id="carouselExampleIndicators" class="carousel slide">
                     <div class="carousel-indicators">
@@ -80,10 +80,10 @@ data-bs-slide="next">
 </div> --}}
 
     <div class="row">
-        <div class="col-12 col-md-8 card-body d-flex justify-content-center align-items-center flex-column">
+        <div class="col-12 col-md-8 card-body w-100 d-flex justify-content-center align-items-center flex-column">
             <h5 class="card-title">{{ $announcement->name }}</h5>
-            <p class="card-text">{{ $announcement->description }}</p>
-            <p class="card-text">{{ $announcement->price }}</p>
+            <p class="w-100 px-5 mx-5">{{ $announcement->description }}</p>
+            <p class="w-100 px-5 mx-5">{{ $announcement->price }}</p>
             <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
                 class="my-2 btn btn-custom1">{{ __('ui.category') }}
                 {{ __('ui.' . $announcement->category->name) }}</a>

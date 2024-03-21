@@ -6,7 +6,7 @@
     <div class="container py-4">
         <div class="row pb-4 justify-content-center">
             <div class="col-12 col-md-6">
-                <h2 class="text-uppercase margin-title">{{__('ui.workwithus')}}</h2>
+                <h2 class="text-uppercase margin-title subtitle">{{__('ui.workwithus')}}</h2>
             </div>
         </div>
         <div class="row justify-content-center">
