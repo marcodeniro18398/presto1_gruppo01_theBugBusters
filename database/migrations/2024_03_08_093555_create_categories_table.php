@@ -20,16 +20,16 @@ return new class extends Migration
         });
 
         $categories = [
-            ['name' => 'Elettronica', 'img' => 'media/Elettronica.jpg'], 
-            ['name' => 'Libri', 'img' => 'media/Libri.jpg'],  
-            ['name' => 'Motori', 'img' => 'media/Motori.jpg'], 
-            ['name' => 'Arredamento', 'img' => 'media/Arredamento.jpg'],  
-            ['name' => 'Immobili', 'img' => 'media/Immobili.jpg'], 
-            ['name' => 'Sport', 'img' => 'media/Sport.jpg'], 
-            ['name' => 'Orologi', 'img' => 'media/Orologi.jpg'], 
-            ['name' => 'Moda', 'img' => 'media/Moda.jpg'], 
-            ['name' => 'Strumenti musicali', 'img' => 'media/Strumenti Musicali.jpg'], 
-            ['name' => 'Consulenze', 'img' => 'media/Consulenze.jpg'], 
+            ['name' => 'Elettronica', 'img' => 'media/Elettronica.webp'], 
+            ['name' => 'Libri', 'img' => 'media/Libri.webp'],  
+            ['name' => 'Motori', 'img' => 'media/Motori.webp'], 
+            ['name' => 'Arredamento', 'img' => 'media/Arredamento.webp'],  
+            ['name' => 'Immobili', 'img' => 'media/Immobili.webp'], 
+            ['name' => 'Sport', 'img' => 'media/Sport.webp'], 
+            ['name' => 'Orologi', 'img' => 'media/Orologi.webp'], 
+            ['name' => 'Moda', 'img' => 'media/Moda.webp'], 
+            ['name' => 'Strumenti musicali', 'img' => 'media/Strumenti_Musicali.webp'], 
+            ['name' => 'Consulenze', 'img' => 'media/Consulenze.webp'], 
         ];
 
         foreach ($categories as $category) {

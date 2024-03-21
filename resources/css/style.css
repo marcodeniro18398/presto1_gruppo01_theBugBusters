@@ -350,6 +350,11 @@ a {
 }
 
 
+.card-body-custom {
+    flex: 1 1 auto;
+    padding: 10px 40px;
+    color: var(--bs-card-color);
+}
 
 
 
