@@ -9,7 +9,7 @@
         </div>
         <div class="row justify-content-center ">
             @forelse ($announcements as $announcement)
-                <div class="col-12 col-md-3 my-5">
+                <div class="col-12 col-md-4 my-5 mx-auto d-flex justify-content-evenly">
                     <x-card :announcement="$announcement"></x-card>
                     {{-- <div class="card rounded-5" style="width: 18rem;">
                         <img src="{{ !$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200' }}"

@@ -23,7 +23,7 @@
         <!-- Text -->
         <p class="card-text text-truncate">{{ $announcement->description }}</p>
         <!-- Price -->
-        <p class="card-text">{{ $announcement->price }}</p>
+        <p class="card-text">{{ $announcement->price }} €</p>
         <!-- Button -->
         <a href="{{ route('announcements.show', compact('announcement')) }}"
             class="btn mx-1 my-1 btn-custom2">{{__('ui.details')}}</a>

@@ -357,6 +357,11 @@ a {
     color: var(--bs-card-color);
 }
 
+.border-info1{
+
+    border-color: var(--grey)!important; 
+}
+
 
 
 /*~ Media queries */

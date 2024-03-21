@@ -83,7 +83,7 @@ data-bs-slide="next">
         <div class="col-12 col-md-8 card-body w-100 d-flex justify-content-center align-items-center flex-column">
             <h5 class="card-title">{{ $announcement->name }}</h5>
             <p class="w-100 px-5 mx-5">{{ $announcement->description }}</p>
-            <p class="w-100 px-5 mx-5">{{ $announcement->price }}</p>
+            <p class="w-100 px-5 mx-5">{{ $announcement->price }} €</p>
             <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
                 class="my-2 btn btn-custom1">{{ __('ui.category') }}
                 {{ __('ui.' . $announcement->category->name) }}</a>

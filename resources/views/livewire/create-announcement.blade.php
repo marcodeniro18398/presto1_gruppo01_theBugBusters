@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-12">
                         <p>{{__('ui.photoPreview')}}</p>
-                        <div class="row border border-4 border-info shadow py-4  mb-3">
+                        <div class="row border border-4 border-info1 shadow py-4  mb-3">
                             @foreach ($images as $key => $image)
                                 <div class="col my-3">
                                     <div class="img-preview mx-auto shadow rounded"

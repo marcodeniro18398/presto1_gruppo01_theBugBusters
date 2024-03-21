@@ -20,7 +20,7 @@ class AnnouncementController extends Controller
     }
     
     public function indexAnnouncement(){
-        $announcements = Announcement::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(8);
+        $announcements = Announcement::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(9);
         return view('announcements.index', compact('announcements'));
     }
 }
