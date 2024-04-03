@@ -16,7 +16,7 @@ use App\Http\Controllers\AnnouncementController;
 |
 */
 
-Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+Route::get('/', [PublicController::class, 'homepage'])->name('homepage')->middleware('verified');
 
 //* rotte categorie
 Route::get('/categoria', [PublicController::class, 'categoryAll'])->name('categoryAll');
