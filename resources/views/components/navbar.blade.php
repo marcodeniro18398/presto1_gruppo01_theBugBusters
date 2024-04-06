@@ -19,12 +19,12 @@
                         {{ __('ui.category') }}
                     </a>
                     {{-- <ul class="dropdown-menu">
-                        @foreach ($categories as $category)
-                            <li><a class="dropdown-item"
-                                    href="{{ route('categoryShow', compact('category')) }}">{{ __('ui.' . $category->name) }}</a>
-                            </li>
-                        @endforeach
-                    </ul> --}}
+                    @foreach ($categories as $category)
+                    <li><a class="dropdown-item"
+                        href="{{ route('categoryShow', compact('category')) }}">{{ __('ui.' . $category->name) }}</a>
+                    </li>
+                    @endforeach
+                </ul> --}}
                 </li>
                 {{-- drop down utente --}}
                 @guest
@@ -38,8 +38,8 @@
                             <li><a class="dropdown-item" href="{{ route('register') }}">{{ __('ui.registration') }}</a>
                             </li>
                             {{-- <li>
-                                <hr class="dropdown-divider">
-                            </li> --}}
+                    <hr class="dropdown-divider">
+                </li> --}}
                             {{-- <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
                         </ul>
                     </li>
@@ -82,6 +82,9 @@
                             @endif
                             <li>
                                 <hr class="dropdown-divider bg-champagnePink">
+                            </li>
+                            <li><a class="dropdown-item " href="{{ route('user.profile') }}">Profilo di {{ Auth::user()->name }}
+                                </a>
                             </li>
                             <li><a class="dropdown-item" href="{{ route('homepage') }}"
                                     onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">Logout</a>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementController;
@@ -17,6 +18,9 @@ use App\Http\Controllers\AnnouncementController;
 */
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage')->middleware('verified');
+
+//* Rotte profilo utente
+Route::get('/profile', [UserController::class, 'profile'])->name('user.profile')->middleware('auth', 'verified');
 
 //* rotte categorie
 Route::get('/categoria', [PublicController::class, 'categoryAll'])->name('categoryAll');

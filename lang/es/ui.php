@@ -22,6 +22,7 @@ return [
     'Moda'=>'Moda',
     'Strumenti musicali'=>'Instrumentos Musicales',
     'Consulenze'=>'Consultoria',
+    'modify'=>'Modificacion',
     // Lavora con noi
     'workwithus'=>'Trabaja con nosotros',
     'insertyourname'=>'Inserta tu nombre',
