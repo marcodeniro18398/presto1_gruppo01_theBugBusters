@@ -17,7 +17,7 @@ use App\Http\Controllers\AnnouncementController;
 |
 */
 
-Route::get('/', [PublicController::class, 'homepage'])->name('homepage')->middleware('verified');
+Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
 //* Rotte profilo utente
 Route::get('/profile', [UserController::class, 'profile'])->name('user.profile')->middleware('auth', 'verified');
